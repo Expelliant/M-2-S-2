@@ -1,70 +1,105 @@
-import { Link } from 'react-router-dom';
-import { Card, CardContent, Typography, Grid } from '@mui/material';
-import TrendingUpIcon from '@mui/icons-material/TrendingUp';
-import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
-import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
+import React from 'react';
+import { Bar } from 'react-chartjs-2';
+import { Chart as ChartJS } from 'chart.js/auto';
 import './Dashboard.css';
 
-// Reusable Metric Card Component
-function MetricCard({ title, value, icon: Icon }) {
-  return (
-    <Card className="metric-card">
-      <CardContent>
-        <div className="metric-header">
-          <Icon className="metric-icon" />
-          <Typography variant="h6" color="textSecondary">
-            {title}
-          </Typography>
-        </div>
-        <Typography variant="h4" className="metric-value">
-          {value}
-        </Typography>
-      </CardContent>
-    </Card>
-  );
-}
+const Dashboard = () => {
+  // Chart data configuration
+  const visitorData = {
+    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Sep', 'Oct', 'Nov', 'Dec'],
+    datasets: [
+      {
+        label: 'Legal Customers',
+        data: [400, 300, 200, 100, 0, 150, 250, 300, 400, 350, 300],
+        backgroundColor: '#3B82F6',
+      },
+      {
+        label: 'Unique Customers',
+        data: [200, 250, 300, 350, 400, 300, 250, 200, 150, 100, 50],
+        backgroundColor: '#10B981',
+      }
+    ]
+  };
 
-export default function Dashboard() {
   return (
     <div className="dashboard-container">
-      <h1>Marketing Dashboard</h1>
-      
-      <Grid container spacing={3} className="metrics-grid">
-        <Grid item xs={12} sm={6} md={3}>
-          <MetricCard
-            title="Total Sales"
-            value="$589.98k"
-            icon={AttachMoneyIcon}
-          />
-        </Grid>
-        
-        <Grid item xs={12} sm={6} md={3}>
-          <MetricCard
-            title="Active Users"
-            value="123,400"
-            icon={PeopleAltIcon}
-          />
-        </Grid>
-        
-        <Grid item xs={12} sm={6} md={3}>
-          <MetricCard
-            title="Conversion Rate"
-            value="3.5%"
-            icon={TrendingUpIcon}
-          />
-        </Grid>
-        
-        <Grid item xs={12} sm={6} md={3}>
-          <MetricCard
-            title="Monthly Profit"
-            value="$25,874"
-            icon={AttachMoneyIcon}
-          />
-        </Grid>
-      </Grid>
+      {/* Header Section */}
+      <div className="header-section">
+        <h1>Q Search</h1>
+        <h2>Dashboard</h2>
+      </div>
 
-      {/* Fixed Link component */}
-      <Link to="/" className="home-link">Back to Home</Link>
+      {/* Main Grid */}
+      <div className="dashboard-grid">
+        {/* Today's Sales Card */}
+        <div className="sales-card">
+          <h3>Today's Sales</h3>
+          <div className="sales-metrics">
+            <div className="metric-item">
+              <span className="metric-label">Total Sales</span>
+              <span className="metric-value">$589.98k</span>
+            </div>
+            <div className="metric-item">
+              <span className="metric-label">Total Orders</span>
+              <span className="metric-value">300</span>
+            </div>
+            <div className="metric-item">
+              <span className="metric-label">Products Sold</span>
+              <span className="metric-value">5</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Revenue Section */}
+        <div className="revenue-card">
+          <h3>Total Revenue</h3>
+          <div className="revenue-chart">
+            <Bar 
+              data={visitorData}
+              options={{
+                responsive: true,
+                maintainAspectRatio: false
+              }}
+            />
+          </div>
+        </div>
+
+        {/* Customer Satisfaction */}
+        <div className="satisfaction-card">
+          <h3>Customer Satisfaction</h3>
+          <div className="satisfaction-metrics">
+            <div className="satisfaction-item">
+              <span>Satisfied</span>
+              <span className="positive">53.1%</span>
+            </div>
+            <div className="satisfaction-item">
+              <span>Not Satisfied</span>
+              <span className="negative">46.9%</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Sales Analytics */}
+        <div className="analytics-card">
+          <h3>Sales Analytics</h3>
+          <div className="analytics-grid">
+            <div className="analytic-item">
+              <span>Income</span>
+              <h4>$1,760</h4>
+            </div>
+            <div className="analytic-item">
+              <span>Sales</span>
+              <h4>345</h4>
+            </div>
+            <div className="analytic-item">
+              <span>Conversion</span>
+              <h4>3.5%</h4>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
-}
+};
+
+export default Dashboard;
