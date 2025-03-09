@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketing Minds - Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="logo">
+                <img src="https://via.placeholder.com/150x50" alt="Marketing Minds Logo">
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item active" data-page="dashboard.html">
+                    <span class="icon">🏠</span>
+                    Dashboard
+                </li>
+                <li class="nav-item" data-page="ecommerce.html">
+                    <span class="icon">🛒</span>
+                    Ecommerce
+                </li>
+                <li class="nav-item" data-page="analytics.html">
+                    <span class="icon">📊</span>
+                    Analytics
+                </li>
+                <li class="nav-item" data-page="crm.html">
+                    <span class="icon">👥</span>
+                    CRM
+                </li>
+            </ul>
+        </div>
+        <div class="main-content">
+            <div class="header">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search">
+                </div>
+                <h1>Dashboard</h1>
+            </div>
+            <div class="content">
+                <div class="card-row">
+                    <div class="card" style="background-color: #ffecec;">
+                        <h3>Today's Sales</h3>
+                        <p class="sales-summary">Sales summary</p>
+                        <h2>$589.8k</h2>
+                    </div>
+                    <div class="card" style="background-color: #ecf6ff;">
+                        <h3>Total Orders</h3>
+                        <h2>300</h2>
+                    </div>
+                    <div class="card" style="background-color: #ecffef;">
+                        <h3>Product Sold</h3>
+                        <h2>5</h2>
+                    </div>
+                    <div class="card" style="background-color: #ffecf6;">
+                        <h3>New Customers</h3>
+                        <h2>25+</h2>
+                    </div>
+                </div>
+                <div class="chart-row">
+                    <div class="chart-container">
+                        <h2>Total Revenue</h2>
+                        <canvas id="revenueChart"></canvas>
+                    </div>
+                    <div class="chart-container">
+                        <h2>Visitor Insights</h2>
+                        <canvas id="visitorChart"></canvas>
+                    </div>
+                </div>
+                <div class="chart-row">
+                    <div class="chart-container">
+                        <h2>Actual vs Target</h2>
+                        <canvas id="targetChart"></canvas>
+                    </div>
+                    <div class="chart-container">
+                        <h2>Customer Satisfaction</h2>
+                        <canvas id="satisfactionChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

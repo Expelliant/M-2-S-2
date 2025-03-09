@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketing Minds - Ecommerce</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="logo">
+                <img src="https://via.placeholder.com/150x50" alt="Marketing Minds Logo">
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item" data-page="dashboard.html">
+                    <span class="icon">🏠</span>
+                    Dashboard
+                </li>
+                <li class="nav-item active" data-page="ecommerce.html">
+                    <span class="icon">🛒</span>
+                    Ecommerce
+                </li>
+                <li class="nav-item" data-page="analytics.html">
+                    <span class="icon">📊</span>
+                    Analytics
+                </li>
+                <li class="nav-item" data-page="crm.html">
+                    <span class="icon">👥</span>
+                    CRM
+                </li>
+            </ul>
+        </div>
+        <div class="main-content">
+            <div class="header">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search">
+                </div>
+                <h1>Ecommerce</h1>
+            </div>
+            <div class="content">
+                <div class="welcome-section">
+                    <h2>WELCOME Back !!!</h2>
+                    <p>You have earned 40% more than last month which is great thing</p>
+                </div>
+
+                <div class="metrics-row">
+                    <div class="metric-card">
+                        <div class="metric-info">
+                            <div>
+                                <h3>Today's Sales</h3>
+                                <h2>$589.9k</h2>
+                                <span class="positive-change">+15.5%</span>
+                            </div>
+                            <div class="metric-icon">📈</div>
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-info">
+                            <div>
+                                <h3>Overall Performance</h3>
+                                <h2>49%</h2>
+                                <span class="positive-change">↗</span>
+                            </div>
+                            <div class="metric-icon">📊</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="metrics-row">
+                    <div class="metric-card small">
+                        <div class="metric-info">
+                            <div>
+                                <h3>Orders</h3>
+                                <h2>+36</h2>
+                                <span class="negative-change">-17%</span>
+                            </div>
+                            <div class="metric-icon">📦</div>
+                        </div>
+                    </div>
+                    <div class="metric-card small">
+                        <div class="metric-info">
+                            <div>
+                                <h3>Customers</h3>
+                                <h2>123,400</h2>
+                                <span class="positive-change">+49%</span>
+                            </div>
+                            <div class="metric-icon">👥</div>
+                        </div>
+                    </div>
+                    <div class="metric-card small">
+                        <div class="metric-info">
+                            <div>
+                                <h3>Sales Profit</h3>
+                                <h2>25874</h2>
+                                <span class="positive-change">+8%</span>
+                            </div>
+                            <div class="metric-icon">💰</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chart-row">
+                    <div class="chart-container dark">
+                        <div class="chart-header">
+                            <h2>Sales Analytics</h2>
+                            <div class="chart-actions">
+                                <label>Sort By:</label>
+                                <select>
+                                    <option>Weekly</option>
+                                    <option>Monthly</option>
+                                    <option>Yearly</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="metrics-inline">
+                            <div class="inline-metric">
+                                <h2>$1,760</h2>
+                                <p>Income</p>
+                            </div>
+                            <div class="inline-metric">
+                                <h2>345</h2>
+                                <p>Sales</p>
+                            </div>
+                            <div class="inline-metric">
+                                <h2>3.5%</h2>
+                                <p>Conversion Ratio</p>
+                            </div>
+                        </div>
+                        <canvas id="salesAnalyticsChart"></canvas>
+                    </div>
+                    <div class="chart-container">
+                        <h2>Product Sales</h2>
+                        <p>Monthly trending</p>
+                        <canvas id="productSalesChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="customers-section">
+                    <div class="section-header">
+                        <h2>All Customers</h2>
+                        <span class="badge">Active Members</span>
+                        <div class="section-actions">
+                            <label>Short by:</label>
+                            <select>
+                                <option>Newest</option>
+                                <option>Oldest</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

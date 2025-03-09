@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketing Minds - CRM</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="logo">
+                <img src="https://via.placeholder.com/150x50" alt="Marketing Minds Logo">
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item" data-page="dashboard.html">
+                    <span class="icon">🏠</span>
+                    Dashboard
+                </li>
+                <li class="nav-item" data-page="ecommerce.html">
+                    <span class="icon">🛒</span>
+                    Ecommerce
+                </li>
+                <li class="nav-item" data-page="analytics.html">
+                    <span class="icon">📊</span>
+                    Analytics
+                </li>
+                <li class="nav-item active" data-page="crm.html">
+                    <span class="icon">👥</span>
+                    CRM
+                </li>
+            </ul>
+        </div>
+        <div class="main-content">
+            <div class="header">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search">
+                </div>
+                <h1>CRM</h1>
+                <h2>Sales Analytics</h2>
+                <p>Using data-driven sales strategies to gain insights and boost growth.</p>
+            </div>
+            <div class="content">
+                <div class="chart-row">
+                    <div class="chart-container full-width">
+                        <canvas id="monthlySalesChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="metrics-row">
+                    <div class="metric-card small">
+                        <div class="metric-info">
+                            <div>
+                                <h3>Visit Customers</h3>
+                                <h2>345121</h2>
+                                <span class="positive-change">+10.5%</span>
+                            </div>
+                            <div class="view-action">
+                                <a href="#">View all customers</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="metric-card small">
+                        <div class="metric-info">
+                            <div>
+                                <h3>Impressions</h3>
+                                <h2>5167821</h2>
+                                <span class="positive-change">+7.1%</span>
+                            </div>
+                            <div class="view-action">
+                                <a href="#">View impressions</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="metric-card small">
+                        <div class="metric-info">
+                            <div>
+                                <h3>Total Orders</h3>
+                                <h2>123,400</h2>
+                                <span class="positive-change">+4%</span>
+                            </div>
+                            <div class="view-action">
+                                <a href="#">See orders</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="metric-card small">
+                        <div class="metric-info">
+                            <div>
+                                <h3>Total Profit</h3>
+                                <h2>21M</h2>
+                                <span class="positive-change">+8%</span>
+                            </div>
+                            <div class="subtitle">
+                                <span>23j This month</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chart-row">
+                    <div class="chart-container half">
+                        <h2>Deal Revenue Forecast</h2>
+                        <div class="revenue-circle">
+                            <canvas id="dealRevenueChart"></canvas>
+                            <div class="center-text">
+                                <p>This Month</p>
+                                <h2>$878k</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chart-container half">
+                        <div class="header-actions">
+                            <h2>Team Goal</h2>
+                            <a href="#">View all</a>
+                        </div>
+                        <div class="progress-section">
+                            <div class="progress-item">
+                                <div class="progress-info">
+                                    <span>Marketing</span>
+                                    <span>$15,408/$30,000</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 51%; background-color: #3498db;"></div>
+                                </div>
+                            </div>
+                            <div class="progress-item">
+                                <div class="progress-info">
+                                    <span>Sales Revenue</span>
+                                    <span>$44,000/$100,000</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 44%; background-color: #3498db;"></div>
+                                </div>
+                            </div>
+                            <div class="progress-item">
+                                <div class="progress-info">
+                                    <span>Ads Revenue</span>
+                                    <span>$82,578/$150,000</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 55%; background-color: #f39c12;"></div>
+                                </div>
+                            </div>
+                            <div class="progress-item">
+                                <div class="progress-info">
+                                    <span>Digital Marketing</span>
+                                    <span>$157,000/$200,000</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 78%; background-color: #2ecc71;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
